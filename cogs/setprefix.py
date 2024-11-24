@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import sqlite3
 
-class SetPrefix(commands.Cog):
+class Prefix(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.config = sqlite3.connect('prefix.db')
@@ -42,4 +42,4 @@ class SetPrefix(commands.Cog):
         await ctx.send(embed=embed)
 
 async def setup(bot):
-    await bot.add_cog(SetPrefix(bot))
+    await bot.add_cog(Prefix(bot))
